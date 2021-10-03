@@ -1,0 +1,20 @@
+{
+	"busy": false,
+	"delay": 0,
+	"apiUrl": "https://fakerestapi.azurewebsites.net/api/v1/",
+	"authorSetName": "Authors",
+	"bookSetName": "Books",
+	"selectedAuthor": {
+		"id": "",
+		"value": ""
+	},
+	"selectedBook": {
+		"id": "",
+		"title": "",
+		"description": "",
+		"pageCount": "",
+		"excerpt": "",
+		"publishDate": ""
+	},
+	"selectedBookValue": ""
+}

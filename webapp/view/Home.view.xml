@@ -1,0 +1,7 @@
+<mvc:View controllerName="DemoApp.controller.Home" displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc">
+	<Page title="{i18n>demoapp.home.page.title}" busy="{HomeView>/busy}" busyIndicatorDelay="{HomeView>/delay}">
+		<content>
+			<core:Fragment fragmentName="DemoApp.fragment.BookSelectionForm" type="XML" />
+		</content>
+	</Page>
+</mvc:View>

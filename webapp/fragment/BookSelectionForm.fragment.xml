@@ -1,0 +1,26 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<VBox class="sapUiSmallMargin">
+		<f:SimpleForm editable="false" layout="ResponsiveGridLayout" title="{i18n>demoapp.home.page.form.title}" labelSpanXL="3" labelSpanL="3"
+			labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="3" emptySpanL="3" emptySpanM="3" emptySpanS="0" columnsXL="1"
+			columnsL="1" columnsM="1" singleContainerFullSize="false">
+			<f:content>
+				<Label text="{i18n>demoapp.home.page.form.label.author}"/>
+				<ComboBox items="{ path: 'Authors>/items' }" selectionChange="onAuthorSelectionChange" value="{HomeView>/selectedAuthor/value}">
+					<core:ListItem key="{Authors>id}" text="{Authors>firstName} {Authors>lastName}"/>
+				</ComboBox>
+				<Label text="{i18n>demoapp.home.page.form.label.book}"/>
+				<ComboBox items="{ path: 'Books>/items' }" enabled="{= ${HomeView>/selectedAuthor/id}.length > 0}" change="onBookChange" value="{HomeView>/selectedBook/title}">
+					<core:ListItem key="{Books>id}" text="{Books>title}"/>
+				</ComboBox>
+				<Label text="{i18n>demoapp.home.page.form.label.description}" visible="{= ${HomeView>/selectedBook/description}.length > 0}"/>
+				<Text text="{HomeView>/selectedBook/description}" visible="{= ${HomeView>/selectedBook/description}.length > 0}"/>
+				<Label text="{i18n>demoapp.home.page.form.label.pageCount}" visible="{= ${HomeView>/selectedBook/pageCount}.length > 0}"/>
+				<Text text="{HomeView>/selectedBook/pageCount}" visible="{= ${HomeView>/selectedBook/pageCount}.length > 0}"/>
+				<Label text="{i18n>demoapp.home.page.form.label.excerpt}" visible="{= ${HomeView>/selectedBook/excerpt}.length > 0}"/>
+				<Text text="{HomeView>/selectedBook/excerpt}" visible="{= ${HomeView>/selectedBook/excerpt}.length > 0}"/>
+				<Label text="{i18n>demoapp.home.page.form.label.publishDate}" visible="{= ${HomeView>/selectedBook/publishDate}.length > 0}"/>
+				<Text text="{path: 'HomeView>/selectedBook/publishDate'}" visible="{= ${HomeView>/selectedBook/publishDate}.length > 0}"/>
+			</f:content>
+		</f:SimpleForm>
+	</VBox>
+</core:FragmentDefinition>
